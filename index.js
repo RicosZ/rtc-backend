@@ -1,5 +1,7 @@
 const express = require('express');
+require('dotenv').config();
 const app = express();
+const PORT = process.env.PORT
 // const { Server } = require('socket.io');
 // const mongoose = require('mongoose');
 // const { MONGO_DB_CONFIG } = require('./config/app.config');
@@ -38,9 +40,9 @@ async function server() {
             console.log('candidiate');
         });
     });
-    const port = process.env.port || 4444;
-    http.listen(port, function () {
-        console.log(`API Ready!!! on ${port}`);
+    
+    http.listen(PORT, () => {
+        console.log(`server start at port ${PORT}`)
     });
 }
 
